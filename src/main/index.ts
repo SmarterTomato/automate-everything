@@ -1,5 +1,5 @@
 import { electronApp, is, optimizer } from '@electron-toolkit/utils';
-import { BrowserWindow, app, shell } from 'electron';
+import { BrowserWindow, app, ipcMain, shell } from 'electron';
 import { join } from 'path';
 import 'reflect-metadata';
 import icon from '../../resources/icon.png?asset';
@@ -44,6 +44,10 @@ function createWindow(): void {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
+  ipcMain.handle('print', (_, args) => {
+    console.log(args);
+  });
+
   // Set app user model id for windows
   electronApp.setAppUserModelId('com.electron');
 
