@@ -3,6 +3,7 @@
   "include": [
     "electron.vite.config.*",
     "src/main/**/*",
+    "src/shared/**/*",
     "src/preload/*",
   ],
   "compilerOptions": {
@@ -13,14 +14,14 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@main/*": [
-        "src/main/*",
-      ],
-      "@shared": [
+      "@shared/*": [
         "src/shared/*",
       ],
-      "@resources": [
+      "@resources/*": [
         "resources/*",
+      ],
+      "@main/*": [
+        "src/main/*",
       ]
     },
     "experimentalDecorators": true,
