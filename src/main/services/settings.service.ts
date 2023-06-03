@@ -11,19 +11,19 @@ export class SettingsService {
   ) {}
 
   getSettings(): Settings {
-    return this.get(MainConstants.Settings) as Settings;
+    return this.get(MainConstants.appSettings) as Settings;
   }
 
   setSettings(settings: Settings): void {
-    this.set(MainConstants.Settings, settings);
+    this.set(MainConstants.appSettings, settings);
   }
 
   getUserData(): UserData {
-    return this.get(MainConstants.Settings) as UserData;
+    return this.get(MainConstants.userDataSettings) as UserData;
   }
 
   setUserData(userData: UserData): void {
-    this.set(MainConstants.Settings, userData);
+    this.set(MainConstants.userDataSettings, userData);
   }
 
   private get(key: string): Settings {

@@ -1,3 +1,4 @@
-export enum MainConstants {
-  Settings = 'Settings'
-}
+export const MainConstants = {
+  appSettings: 'appSettings',
+  userDataSettings: 'userDataSettings'
+};
